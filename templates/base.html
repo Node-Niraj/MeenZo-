@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+{% load static %}
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Home</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static 'images/fav-1.png' %}" type="image/x-icon">
+    <!-- Stylesheets-->
+
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0 maximum-scale=1.0 user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <!-- Stylesheets-->
+	<script src="{% static 'js/juery.min.js' %}"></script>
+	<script src="{% static 'js/juery-ui.js' %}"></script>
+	
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <!-- Toast CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+	<style>
+	a{
+		text-decoration:none !important;
+	}
+	.btn-rg{
+		background: #ff9d01;
+		color: #fff !important;
+		padding: 7px 24px;
+		font-size: 17px;
+		border-radius:5px;
+	}
+	.btn-rg:hover{
+		background: green;
+	}
+	.rd-navbar-main-element .others-option {
+		position: absolute;
+		top: 2px;
+		right: -25px;
+	}
+	.btn-group, .btn-group-vertical {
+		position: relative;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		vertical-align: middle;
+	}
+	.rd-navbar-main-element .others-option .register .default-btn {
+		padding: 9px 20px;
+		margin-bottom: -10px;
+		position: relative;
+		color: #fff;
+		top: -10px;
+		border-left: 1px solid #d6d6d6;
+		background: #ff9d01;
+		border-radius: 3px;
+		border: 2px solid #ffb607 !important;
+	}
+	.rd-navbar-main-element .others-option .register .default-btn:hover {
+		color: #ffb607 !important;
+		background:#fff;
+	}
+	.others-option-for-responsive {
+		display: none;
+	}
+	.others-option .register .btn-group .dropdown{
+		top: -7px;
+		background: #ff9d01;
+		padding: 5px 10px;
+		border-radius: 20px;
+		color: #fff;
+	}
+	.others-option .register .btn-group .dropdown img{
+		height: 30px;
+		width: 30px;
+		border-radius: 50%;
+		margin-right: 6px;
+	}
+	@media (max-width: 575.98px) {
+	.others-option-for-responsive {
+		display: inline-block;
+		}
+	.others-option-for-responsive .container {
+		position: relative;
+	}
+	.others-option-for-responsive .dot-menu {
+		padding: 0 10px;
+		height: 30px;
+		cursor: pointer;
+		z-index: 9991;
+		position: absolute;
+		right: -108px;
+		top: -10px;
+	}
+	.others-option-for-responsive .dot-menu .inner {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		height: 30px;
+	}
+	.others-option-for-responsive .dot-menu .inner .circle {
+		height: 5px;
+		width: 5px;
+		border-radius: 100%;
+		margin: 0 2px;
+		-webkit-transition: all ease .5s;
+		transition: all ease .5s;
+		background-color: #ffb607;
+	}
+	.others-option-for-responsive .container .container.active {
+		opacity: 1;
+		visibility: visible;
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+	}
+	.others-option-for-responsive .container .container {
+		position: absolute;
+		right: 0;
+		left: 0;
+		top: 10px;
+		max-width: 262px;
+		margin: auto;
+		opacity: 0;
+		visibility: hidden;
+		-webkit-box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+		-webkit-transition: all ease .5s
+		transition: all ease .5s;
+		-webkit-transform: scaleX(0);
+		transform: scaleX(0);
+		z-index: 2;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.others-option-for-responsive .option-inner {
+		/*padding: 15px;
+		-webkit-box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+		background-color: #fff;*/
+	}
+	.others-option-for-responsive .option-inner .others-option {
+		background-color: #fff;
+		border-radius: 30px;
+		padding: 15px;
+		position: absolute;
+		top: 41px;
+		left: -203px;
+		right: -90px;
+		-webkit-box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.05);
+	}
+	.navbar-area .others-option .register .default-btn {
+		padding: 10px 10px;
+		margin-bottom: -10px;
+		font-size: 13px;
+		margin-bottom: 0;
+		border-radius: 10px; 
+		top: 0;
+	}
+	.default-btn {
+		font-size: 16px;
+		color: #fff;
+		padding: 11px 14px;
+		line-height: 1;
+		-webkit-transition: all ease .5s;
+		transition: all ease .5s;
+		text-align: center;
+		background-color: #ffb607;
+		border-radius: 4px;
+		border: 1px solid #ffb607;
+		margin-bottom: -4px;
+		text-transform: capitalize;
+	}
+	}
+	</style>
+  </head>
+  <body>
+  {% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success'%}
+            <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+        {% elif message.tags == 'info' %}
+            <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+        {% elif message.tags == 'warning' %}
+            <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+        {% elif message.tags == 'error' %}
+            <script type=text/javascript>toastr.{{ message.tags }}('{{ message }}')</script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+    <div class="page">
+      <!-- Page Header-->
+      <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap">
+          <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1"><span></span></button>
+                  <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="/"><img src="{% static 'images/MeenZO-logos.jpeg' %}" alt="" width="120" height="120"/></a>
+					<!-- Start Others Option For Responsive -->
+					<div class="others-option-for-responsive">
+						<div class="container">
+							<div class="dot-menu">
+								<div class="inner">
+									<div class="circle circle-one"></div>
+									<div class="circle circle-two"></div>
+									<div class="circle circle-three"></div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="option-inner">
+									<div class="others-option justify-content-center d-flex align-items-center">
+										<div class="register">
+											<div class="btn-group" role="group" aria-label="Basic example">
+											  <a href="#" type="button" class="btn default-btn" data-toggle="modal" data-target="#login">Login</a>
+											  <a href="#" type="button" class="btn default-btn" data-toggle="modal" data-target="#register">Register</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End Others Option For Responsive -->
+				</div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                    <!-- RD Navbar Nav-->
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="/">Home</a>
+                      </li>
+					  <li class="rd-nav-item"><a class="rd-nav-link" href="#">About Us </a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="#">Courses</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="#">Contacts</a>
+                      </li>
+
+                    </ul>
+					<div class="others-option">
+					        {% if request.user.is_authenticated %}
+							<div class="register">
+								<div class="btn-group" role="group" aria-label="Basic example">
+									<!-- <li  class="rd-nav-item"></li>
+									<li class="rd-nav-item" style="margin-top: 11px;"><a href=""><i class="fa fa-sign-out" aria-hidden="true" style="color:#000;font-size:30px"></i></a></li>
+									 --><div class="dropdown">
+									  <a class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<img  src="https://www.mockofun.com/wp-content/uploads/2019/12/circle-profile-pic.jpg"  class="img-responsive" alt="">{{user.first_name}}</a>
+									  </a>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+										<a class="dropdown-item" href="/profile"><i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="/signout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+									  </div>
+									</div>
+								</div>
+							</div>
+							{% else %}
+							<div class="register">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+								<a href="/signin" type="button" class="btn default-btn">SignIn</a>
+								<a href="/signup" type="button" class="btn default-btn">SignUp</a>
+								</div>
+							</div>
+							{% endif %} 
+							
+					</div>
+                  </div>
+                  <!-- RD Navbar Search-->
+                  <!--div class="rd-navbar-search" id="rd-navbar-search-1">
+                    <button class="rd-navbar-search-toggle rd-navbar-fixed-element-2" data-rd-navbar-toggle="#rd-navbar-search-1"><span></span></button>
+                    <form class="rd-search" action="#" data-search-live="rd-search-results-live-1" method="GET">
+                      <div class="form-wrap">
+                        <label class="form-label" for="rd-navbar-search-form-input-1">Search...</label>
+                        <input class="form-input rd-navbar-search-form-input" id="rd-navbar-search-form-input-1" type="text" name="s" autocomplete="off">
+                        <div class="rd-search-results-live" id="rd-search-results-live-1"></div>
+                      </div>
+                      <button class="rd-search-form-submit fa-search" type="submit"></button>
+                    </form>
+                  </div-->
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- FScreen-->
+
+      <div class="tabs-horizontal"></div>
+        {% block body %}
+        {% endblock %}
+      <!-- Small Features-->
+
+      <!-- Page Footer-->
+      <footer class="section footer-minimal bg-primary-green">
+        <div class="container">
+          <div class="footer-minimal-inner"><a class="brand" href="/"><img src="{% static 'images/MeenZO-logos.jpeg' %}" alt="" width="120" height="22"/></a>
+            <!-- Rights-->
+            <p class="rights" style="color:#fff;"><span>&copy;&nbsp;</span><span class="copyright-year"></span>. All Rights Reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="preloader">
+      <div class="preloader-logo"><img src="{% static 'images/logo-default-398x45.png' %}" alt="" width="199" height="22"/>
+      </div>
+      <div class="preloader-body">
+        <div id="loadingProgressG">
+          <div class="loadingProgressG" id="loadingProgressG_1"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+   <script src="{% static 'js/core.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+	
+    <script src="{% static 'js/html5shiv.min.js' %}"></script>
+	<!-- Toast JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script>
+	toastr.options = {
+      "debug": false,
+      "positionClass": "toast-bottom-right",
+      "onclick": null,
+      "fadeIn": 300,
+      "fadeOut": 1000,
+      "timeOut": 5000,
+      "extendedTimeOut": 1000
+    }
+
+
+
+  
+  function alert_message(message,icon,title,url){
+
+      text=message
+      Swal.fire({
+        icon: icon,
+        title: title,
+        html: text,
+        footer: ''
+      }).then(function (isConfirm) {
+          window.location.href =url;
+      })
+  }
+  
+</script>
+  </body>
+</html>
